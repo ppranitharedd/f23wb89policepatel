@@ -3,12 +3,14 @@ extends layout
 block content
   h1= title
   - var tastyFoods = [
-      {taste: "Sweet", texture: "Creamy", temperature: 10},
-      {taste: "Savory", texture: "Crispy", temperature: 180},
-      {taste: "Spicy", texture: "Crunchy", temperature: 220}
-    ]
+    {taste: "Sweet", texture: "Creamy", temperature: 10},
+    {taste: "Savory", texture: "Crispy", temperature: 180},
+    {taste: "Spicy", texture: "Crunchy", temperature: 220}
+  ]
   div(class="container-fluid")
     div(class="row")
       each food, index in tastyFoods
-        div(class="col-sm-2" onclick =`eat(${index})`) #{food.taste}, #{food.texture}, #{food.temperature}°F
-       
+        div(class="col-sm-2" onclick=`eat(${index})`) #{food.taste}, #{food.texture}, #{food.temperature}°F
+      script.
+        function eat(a) {
+          alert(`You enjoyed the ${tastyFoods[a].taste} food!`)
