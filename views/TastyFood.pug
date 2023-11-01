@@ -6,7 +6,8 @@ block content
   div(class="container-fluid")
     div(class="row")
       each food, index in tastyFoods
-        div(class="col-sm-2" onclick=`eat(${index})`) #{food.taste}, #{food.texture}, #{food.temperature}°F
+        div(class="col-sm-2" onclick=`buy(${index})`) #{food.taste}, #{food.texture}, #{food.temperature}°F
       script.
-        function eat(a) {
-          alert(`You enjoyed the ${tastyFoods[a].taste} food!`)
+        function buy(a) {
+          alert(`You enjoyed the ${a+1} food!`)
+        }
